@@ -47,6 +47,7 @@ Available Methods
 18. **[forget()](#forget)**
 19. **[forPage()](#forpage)**
 20. **[get()](#get)**
+21. **[groupBy()](#groupby)**
 
 
 Method Listing
@@ -336,4 +337,30 @@ $collection->get('User.identity.id');
 ```
 ---------
 
+#####```groupBy()```
+
+Group an associative array by a field or using a callback:
+```php
+$collection = new Collection([
+     ['id' => 'id_2', 'name' => 'Bob'],
+     ['id' => 'id_2', 'name' => 'John'],
+     ['id' => 'id_3', 'name' => 'Frank'],
+]);
+
+$grouped = $collection->groupBy('id');
+
+$grouped->toArray();
+/*
+[
+    'id_2' => [
+        ['id' => 'id_2', 'name' => 'Bob'],
+        ['id' => 'id_2', 'name' => 'John'],
+    ],
+    'id_3' => [
+        ['id' => 'id_3', 'name' => 'Frank'],
+    ],
+]
+*/
+```
+---------
 
