@@ -10,6 +10,9 @@
             "email": "igorzfort@gmail.com"
         }
     ],
+    "require": {
+        "yii2mod/yii2-helpers": "*"
+    },
     "autoload": {
         "psr-4": {
             "yii2mod\\collection\\": ""
