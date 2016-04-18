@@ -248,4 +248,16 @@ $collection->flatten();
 ```
 ------
 
+**```flip()```**
+
+Flip the items in the collection:
+```php
+$collection = new Collection(['firstName' => 'Igor', 'lastName' => 'Chepurnoy']);
+
+$collection->flip();
+
+// ['igor' => 'firstName', 'chepurnoy' => 'lastName']
+```
+------
+
 
