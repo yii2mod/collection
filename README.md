@@ -27,7 +27,7 @@ $collection = new Collection([1, 2, 3]);
 
 Available Methods
 -------------------
-1. **[all()](#all)**
+1. [all()](#all)
 2. **[avg()](#avg)**
 3. **[chunk()](#chunk)**
 4. **[collapse()](#collapse)**
