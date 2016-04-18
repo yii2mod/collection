@@ -260,4 +260,44 @@ $collection->flip();
 ```
 ------
 
+**```forget()```**
+
+Remove an item from the collection by key:
+```php
+$collection = new Collection(['firstName' => 'Igor', 'lastName' => 'Chepurnoy']);
+
+$collection->forget('firstName');
+
+$collection->all();
+
+// ['lastName' => 'Chepurnoy']
+```
+------
+
+**```forPage()```**
+
+"Paginate" the collection by slicing it into a smaller collection:
+```php
+$collection = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+$chunk = $collection->forPage(2, 3);
+
+$chunk->all();
+
+// [4, 5, 6]
+```
+---------
+
+**```get()```**
+
+Get an item from the collection by key:
+```php
+$collection = new Collection(['model' => 'User']);
+
+$value = $collection->get('model');
+
+// User
+```
+---------
+
 
