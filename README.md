@@ -27,12 +27,12 @@ $collection = new Collection([1, 2, 3]);
 
 Available Methods
 -------------------
-1. **[avg()](#avg)**
+1. **[all()](#all)**
 
 
 Method Listing
 -------------------
-**```all()```**
+######```all()```
 
 Get all of the items in the collection:
 ```php
