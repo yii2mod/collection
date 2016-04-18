@@ -19,6 +19,12 @@ or add
 
 to the require section of your `composer.json` file.
 
+Creating Collections
+-------------------
+```php
+$collection = new Collection([1, 2, 3]);
+```
+
 Method Listing
 -----
 **```all()```**
