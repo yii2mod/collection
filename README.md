@@ -41,11 +41,11 @@ Available Methods
 12. **[filter()](#filter)**
 13. **[first()](#first)**
 14. **[last()](#last)**
-15. **[flatMap()](#flat-map)**
+15. **[flatMap()](#flatmap)**
 16. **[flatten()](#flatten)**
 17. **[flip()](#flip)**
 18. **[forget()](#forget)**
-19. **[forPage()](#for-page)**
+19. **[forPage()](#forpage)**
 20. **[get()](#get)**
 
 
