@@ -322,11 +322,17 @@ $chunk->all();
 
 Get an item from the collection by key:
 ```php
-$collection = new Collection(['model' => 'User']);
+$collection = new Collection([
+'User' => [
+    'identity' => [
+        'id' => 1
+    ]
+]
+]);
 
-$value = $collection->get('model');
+$collection->get('User.identity.id');
 
-// User
+// 1
 ```
 ---------
 
