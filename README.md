@@ -25,8 +25,13 @@ Creating Collections
 $collection = new Collection([1, 2, 3]);
 ```
 
+Available Methods
+-------------------
+1. **[avg()](#avg)**
+
+
 Method Listing
------
+-------------------
 **```all()```**
 
 Get all of the items in the collection:
