@@ -28,11 +28,30 @@ $collection = new Collection([1, 2, 3]);
 Available Methods
 -------------------
 1. **[all()](#all)**
+2. **[avg()](#avg)**
+3. **[chunk()](#chunk)**
+4. **[collapse()](#collapse)**
+5. **[combine()](#combine)**
+6. **[contains()](#contains)**
+7. **[count()](#count)**
+8. **[diff()](#diff)**
+9. **[each()](#each)**
+10. **[every()](#every)**
+11. **[except()](#except)**
+12. **[filter()](#filter)**
+13. **[first()](#first)**
+14. **[last()](#last)**
+15. **[flatMap()](#flat-map)**
+16. **[flatten()](#flatten)**
+17. **[flip()](#flip)**
+18. **[forget()](#forget)**
+19. **[forPage()](#for-page)**
+20. **[get()](#get)**
 
 
 Method Listing
 -------------------
-######```all()```
+#####```all()```
 
 Get all of the items in the collection:
 ```php
@@ -42,7 +61,7 @@ $collection->all();
 ```
 ------
 
-**```avg()```**
+#####```avg()```
 
 Get the average value of a given key:
 ```php
@@ -52,7 +71,7 @@ $collection->avg();
 ```
 ------
 
-**```chunk()```**
+#####```chunk()```
 
 Chunk the underlying collection array:
 ```php
@@ -66,7 +85,7 @@ $chunks->toArray();
 ```
 ------
 
-**```collapse()```**
+#####```collapse()```
 
 Collapse the collection of items into a single array:
 ```php
@@ -80,7 +99,7 @@ $collapsed->all();
 ```
 ------
 
-**```combine()```**
+#####```combine()```
 
 Create a collection by using this collection for keys and another for its values:
 ```php
@@ -94,7 +113,7 @@ $combined->all();
 ```
 ------
 
-**```contains()```**
+#####```contains()```
 
 Determine if an item exists in the collection:
 ```php
@@ -123,7 +142,7 @@ $collection->contains('city', 'New York');
 ```
 ------
 
-**```count()```**
+#####```count()```
 
 Return count the number of items in the collection:
 ```php
@@ -135,7 +154,7 @@ $collection->count();
 ```
 ------
 
-**```diff()```**
+#####```diff()```
 
 Get the items in the collection that are not present in the given items:
 ```php
@@ -149,7 +168,7 @@ $diff->all();
 ```
 ------
 
-**```each()```**
+#####```each()```
 
 Execute a callback over each item:
 ```php
@@ -161,7 +180,7 @@ $collection = $collection->each(function ($item, $key) {
 ```
 ------
 
-**```every()```**
+#####```every()```
 
 Create a new collection consisting of every n-th element:
 ```php
@@ -173,7 +192,7 @@ $collection->every(4);
 ```
 ------
 
-**```except()```**
+#####```except()```
 
 Get all items except for those with the specified keys:
 ```php
@@ -187,7 +206,7 @@ $filtered->all();
 ```
 ------
 
-**```filter()```**
+#####```filter()```
 
 Run a filter over each of the items:
 ```php
@@ -203,7 +222,7 @@ $filtered->all();
 ```
 ------
 
-**```first()```**
+#####```first()```
 
 Get the first item from the collection:
 ```php
@@ -215,7 +234,7 @@ $collection->first();
 ```
 ------
 
-**```last()```**
+#####```last()```
 
 Get the last item from the collection:
 ```php
@@ -227,7 +246,7 @@ $collection->last();
 ```
 ------
 
-**```flatMap()```**
+#####```flatMap()```
 
 Map a collection and flatten the result by a single level:
 ```php
@@ -247,7 +266,7 @@ $flattened->all();
 ```
 ------
 
-**```flatten()```**
+#####```flatten()```
 
 Map a collection and flatten the result by a single level:
 ```php
@@ -259,7 +278,7 @@ $collection->flatten();
 ```
 ------
 
-**```flip()```**
+#####```flip()```
 
 Flip the items in the collection:
 ```php
@@ -271,7 +290,7 @@ $collection->flip();
 ```
 ------
 
-**```forget()```**
+#####```forget()```
 
 Remove an item from the collection by key:
 ```php
@@ -285,7 +304,7 @@ $collection->all();
 ```
 ------
 
-**```forPage()```**
+#####```forPage()```
 
 "Paginate" the collection by slicing it into a smaller collection:
 ```php
@@ -299,7 +318,7 @@ $chunk->all();
 ```
 ---------
 
-**```get()```**
+#####```get()```
 
 Get an item from the collection by key:
 ```php
