@@ -313,11 +313,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
      */
     public function get($key, $default = null)
     {
-        if ($this->offsetExists($key)) {
-            return $this->items[$key];
-        }
-
-        return ArrayHelper::value($default);
+        return ArrayHelper::getValue($this->items, $key, $default);
     }
 
     /**
