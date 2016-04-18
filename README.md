@@ -48,6 +48,9 @@ Available Methods
 19. **[forPage()](#forpage)**
 20. **[get()](#get)**
 21. **[groupBy()](#groupby)**
+22. **[has()](#has)**
+23. **[implode()](#implode)**
+24. **[intersect()](#intersect)**
 
 
 Method Listing
@@ -364,3 +367,43 @@ $grouped->toArray();
 ```
 ---------
 
+#####```has()```
+
+Determine if an item exists in the collection by key:
+```php
+$collection = new Collection(['id' => 1, 'name' => 'Igor']);
+
+$collection->has('id');
+
+// true
+```
+---------
+
+#####```implode()```
+
+Concatenate values of a given key as a string:
+```php
+$collection = new Collection([
+    ['account_id' => 1, 'name' => 'Ben'],
+    ['account_id' => 2, 'name' => 'Bob'],
+]);
+
+$collection->implode('name', ', ');
+
+// Ben, Bob
+```
+---------
+
+#####```intersect()```
+
+Intersect the collection with the given items:
+```php
+$collection = new Collection(['php', 'python', 'ruby']);
+
+$intersect = $collection->intersect(['python', 'ruby', 'javascript']);
+
+$intersect->all();
+
+// [1 => 'python', 2 => 'ruby']
+```
+---------
