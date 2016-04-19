@@ -51,6 +51,10 @@ Available Methods
 22. **[has()](#has)**
 23. **[implode()](#implode)**
 24. **[intersect()](#intersect)**
+25. **[isEmpty()](#isempty)**
+26. **[keyby()](#keyby)**
+27. **[keys()](#keys)**
+28. **[map()](#map)**
 
 
 Method Listing
@@ -405,5 +409,89 @@ $intersect = $collection->intersect(['python', 'ruby', 'javascript']);
 $intersect->all();
 
 // [1 => 'python', 2 => 'ruby']
+```
+---------
+
+#####```isEmpty()```
+
+Determine if the collection is empty or not:
+```php
+$collection = (new Collection([]))->isEmpty();
+
+// true
+```
+---------
+
+#####```keyBy()```
+
+Key an associative array by a field or using a callback:
+```php
+$collection = new Collection([
+    ['product_id' => '100', 'name' => 'desk'],
+    ['product_id' => '200', 'name' => 'chair'],
+]);
+
+$keyed = $collection->keyBy('product_id');
+
+$keyed->all();
+
+/*
+  [
+     '100' => ['product_id' => '100', 'name' => 'desk'],
+     '200' => ['product_id' => '200', 'name' => 'chair'],
+  ]
+*/
+```
+You may also pass your own callback, which should return the value to key the collection by:
+```php
+$collection = new Collection([
+    ['product_id' => '100', 'name' => 'desk'],
+    ['product_id' => '200', 'name' => 'chair'],
+]);
+
+$keyed = $collection->keyBy(function ($item) {
+    return strtoupper($item['name']);
+});
+
+$keyed->all();
+
+/*
+  [
+    'DESK' => ['product_id' => '100', 'name' => 'desk'],
+    'CHAIR' => ['product_id' => '200', 'name' => 'chair'],
+  ]
+*/
+```
+
+---------
+
+#####```keys()```
+
+Get the keys of the collection items:
+```php
+$collection = new Collection([
+    'city' => 'New York',
+    'country' => 'USA'
+]);
+
+$collection->keys();
+
+// ['city', 'country']
+```
+---------
+
+#####```map()```
+
+Run a map over each of the items:
+```php
+$collection = new Collection([1, 2, 3, 4, 5]);
+
+$multiplied = $collection->map(function ($item, $key) {
+    return $item * 2;
+});
+
+$multiplied->all();
+
+// [2, 4, 6, 8, 10]
 ```
 ---------
