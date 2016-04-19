@@ -1032,8 +1032,6 @@ $collection = new Collection(['name' => 'Desk', 'price' => 200]);
 
 $collection->toJson();
 
-$collection->toArray();
-
 // '{"name":"Desk","price":200}'
 ```
 ---------
