@@ -569,12 +569,12 @@ $merged->all();
 Get the min value of a given key:
 ```php
 $collection = new Collection([['foo' => 10], ['foo' => 20]]);
-$max = $collection->max('foo');
+$max = $collection->min('foo');
 
 // 10
 
 $collection = new Collection([1, 2, 3, 4, 5]);
-$max = $collection->max();
+$max = $collection->min();
 
 // 1
 ```
