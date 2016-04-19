@@ -511,7 +511,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
      */
     public function merge($items)
     {
-        return new static(array_merge($this->items, $this->getArrayableItems($items)));
+        return new static(ArrayHelper::merge($this->items, $this->getArrayableItems($items)));
     }
 
     /**
