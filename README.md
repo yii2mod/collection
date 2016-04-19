@@ -23,6 +23,10 @@ Creating Collections
 -------------------
 ```php
 $collection = new Collection([1, 2, 3]);
+
+//or via `make` function
+
+$collection = Collection::make([1, 2, 3]);
 ```
 
 Available Methods
