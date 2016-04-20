@@ -1,4 +1,4 @@
-# Basic collection library
+# Basic collection library for Yii Framework 2.0
 
 Installation
 ------------
