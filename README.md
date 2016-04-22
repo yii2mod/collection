@@ -99,7 +99,7 @@ Method Listing
 -------------------
 #####```all()```
 
-Get all of the items in the collection:
+The `all` method simply returns the underlying array represented by the collection:
 ```php
 $collection = new Collection([1, 2, 3]);
 $collection->all();
@@ -109,17 +109,28 @@ $collection->all();
 
 #####```avg()```
 
-Get the average value of a given key:
+The `avg` method returns the average of all items in the collection:
 ```php
-$collection = new Collection([1, 2, 3, 4,5]);
+$collection = new Collection([1, 2, 3, 4, 5]);
 $collection->avg();
 // 3
+```
+If the collection contains nested arrays or objects, you should pass a key to use for determining which values to calculate the average:
+```php
+$collection = new Collection([
+    ['id' => 1, 'price' => 150],
+    ['id' => 2, 'price' => 250],
+]);
+
+$collection->avg('price');
+
+// 200
 ```
 ------
 
 #####```chunk()```
 
-Chunk the underlying collection array:
+The `chunk` method breaks the collection into multiple, smaller collections of a given size:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5, 6, 7]);
 
@@ -133,7 +144,7 @@ $chunks->toArray();
 
 #####```collapse()```
 
-Collapse the collection of items into a single array:
+The `collapse` method collapses a collection of arrays into a flat collection:
 ```php
 $collection = new Collection([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
 
@@ -161,7 +172,7 @@ $combined->all();
 
 #####```contains()```
 
-Determine if an item exists in the collection:
+The `contains` method determines whether the collection contains a given item:
 ```php
 $collection = new Collection(['city' => 'Alabama', 'country' => 'USA']);
 
@@ -190,7 +201,7 @@ $collection->contains('city', 'New York');
 
 #####```count()```
 
-Return count the number of items in the collection:
+The `count` method returns the total number of items in the collection:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -202,7 +213,7 @@ $collection->count();
 
 #####```diff()```
 
-Get the items in the collection that are not present in the given items:
+The `diff` method compares the collection against another collection or a plain PHP array:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -216,7 +227,7 @@ $diff->all();
 
 #####```each()```
 
-Execute a callback over each item:
+The `each` method iterates over the items in the collection and passes each item to a given callback:
 ```php
 $collection = $collection->each(function ($item, $key) {
     if (/* some condition */) {
@@ -228,13 +239,19 @@ $collection = $collection->each(function ($item, $key) {
 
 #####```every()```
 
-Create a new collection consisting of every n-th element:
+The `every` method creates a new collection consisting of every n-th element:
 ```php
 $collection = new Collection(['a', 'b', 'c', 'd', 'e', 'f']);
 
 $collection->every(4);
 
 // ['a', 'e']
+```
+You may optionally pass offset as the second argument:
+```php
+$collection->every(4, 1);
+
+// ['b', 'f']
 ```
 ------
 
