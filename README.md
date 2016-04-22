@@ -45,54 +45,53 @@ Available Methods
 12. **[filter()](#filter)**
 13. **[first()](#first)**
 14. **[last()](#last)**
-15. **[flatMap()](#flatmap)**
-16. **[flatten()](#flatten)**
-17. **[flip()](#flip)**
-18. **[forget()](#forget)**
-19. **[forPage()](#forpage)**
-20. **[get()](#get)**
-21. **[groupBy()](#groupby)**
-22. **[has()](#has)**
-23. **[implode()](#implode)**
-24. **[intersect()](#intersect)**
-25. **[isEmpty()](#isempty)**
-26. **[keyby()](#keyby)**
-27. **[keys()](#keys)**
-28. **[map()](#map)**
-29. **[max()](#max)**
-30. **[merge()](#merge)**
-31. **[min()](#min)**
-32. **[only()](#only)**
-33. **[pluck()](#pluck)**
-34. **[pop()](#pop)**
-35. **[prepend()](#prepend)**
-36. **[pull()](#pull)**
-37. **[push()](#push)**
-38. **[put()](#put)**
-39. **[random()](#random)**
-40. **[reduce()](#reduce)**
-41. **[reject()](#reject)**
-42. **[reverse()](#reverse)**
-43. **[search()](#search)**
-44. **[shift()](#shift)**
-45. **[shuffle()](#shuffle)**
-46. **[slice()](#slice)**
-47. **[sort()](#sort)**
-48. **[sortBy()](#sortby)** 
-49. **[sortByDesc()](#sortbydesc)** 
-50. **[splice()](#splice)**
-51. **[sum()](#sum)**
-52. **[take()](#take)**
-53. **[toArray()](#toarray)**
-54. **[toJson()](#tojson)**
-55. **[transform()](#transform)**
-56. **[unique()](#unique)**
-57. **[values()](#values)**
-58. **[where()](#where)**
-59. **[whereLoose()](#whereloose)**
-60. **[whereIn()](#wherein)**
-61. **[whereInLoose()](#whereinloose)**
-62. **[zip()](#zip)**
+15. **[flatten()](#flatten)**
+16. **[flip()](#flip)**
+17. **[forget()](#forget)**
+18. **[forPage()](#forpage)**
+19. **[get()](#get)**
+20. **[groupBy()](#groupby)**
+21. **[has()](#has)**
+22. **[implode()](#implode)**
+23. **[intersect()](#intersect)**
+24. **[isEmpty()](#isempty)**
+25. **[keyby()](#keyby)**
+26. **[keys()](#keys)**
+27. **[map()](#map)**
+28. **[max()](#max)**
+29. **[merge()](#merge)**
+30. **[min()](#min)**
+31. **[only()](#only)**
+32. **[pluck()](#pluck)**
+33. **[pop()](#pop)**
+34. **[prepend()](#prepend)**
+35. **[pull()](#pull)**
+36. **[push()](#push)**
+37. **[put()](#put)**
+38. **[random()](#random)**
+39. **[reduce()](#reduce)**
+40. **[reject()](#reject)**
+41. **[reverse()](#reverse)**
+42. **[search()](#search)**
+43. **[shift()](#shift)**
+44. **[shuffle()](#shuffle)**
+45. **[slice()](#slice)**
+46. **[sort()](#sort)**
+47. **[sortBy()](#sortby)** 
+48. **[sortByDesc()](#sortbydesc)** 
+49. **[splice()](#splice)**
+50. **[sum()](#sum)**
+51. **[take()](#take)**
+52. **[toArray()](#toarray)**
+53. **[toJson()](#tojson)**
+54. **[transform()](#transform)**
+55. **[unique()](#unique)**
+56. **[values()](#values)**
+57. **[where()](#where)**
+58. **[whereLoose()](#whereloose)**
+59. **[whereIn()](#wherein)**
+60. **[whereInLoose()](#whereinloose)**
+61. **[zip()](#zip)**
 
 
 Method Listing
@@ -267,11 +266,13 @@ $filtered->all();
 
 // ['id' => 1, 'name' => 'Desk']
 ```
+For the inverse of `except`, see the [only](#only) method.
+
 ------
 
 #####```filter()```
 
-Run a filter over each of the items:
+The `filter` method filters the collection by a given callback, keeping only those items that pass a given truth test:
 ```php
 $collection = new Collection([1, 2, 3, 4]);
 
@@ -287,7 +288,15 @@ $filtered->all();
 
 #####```first()```
 
-Get the first item from the collection:
+The `first` method returns the first element in the collection that passes a given truth test:
+```php
+Collection::make([1, 2, 3, 4])->first(function ($key, $value) {
+    return $value > 2;
+});
+
+// 3
+```
+You may also call the first method with no arguments to get the first element in the collection. If the collection is empty, `null` is returned:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -299,7 +308,17 @@ $collection->first();
 
 #####```last()```
 
-Get the last item from the collection:
+The `last` method returns the last element in the collection that passes a given truth test:
+```php
+Collection::make([1, 2, 3, 4])->last(function ($key, $value) {
+    return $value > 2;
+});
+
+// 4
+```
+
+You may also call the `last` method with no arguments to get the last element in the collection. If the collection is empty, `null` is returned:
+
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -309,29 +328,9 @@ $collection->last();
 ```
 ------
 
-#####```flatMap()```
-
-Map a collection and flatten the result by a single level:
-```php
-$collection = new Collection(
-    ['name' => 'Sally'],
-    ['school' => 'Arkansas'],
-    ['age' => 28]
-]);
-
-$flattened = $collection->flatMap(function ($values) {
-    return strtoupper($values);
-});
-
-$flattened->all();
-
-// ['name' => 'SALLY', 'school' => 'ARKANSAS', 'age' => 28];
-```
-------
-
 #####```flatten()```
 
-Map a collection and flatten the result by a single level:
+The `flatten` method flattens a multi-dimensional collection into a single dimension:
 ```php
 $collection = new Collection(['language' => 'java', 'languages' => ['php', 'javascript']]);
 
@@ -343,7 +342,7 @@ $collection->flatten();
 
 #####```flip()```
 
-Flip the items in the collection:
+The `flip` method swaps the collection's keys with their corresponding values:
 ```php
 $collection = new Collection(['firstName' => 'Igor', 'lastName' => 'Chepurnoy']);
 
@@ -355,7 +354,7 @@ $collection->flip();
 
 #####```forget()```
 
-Remove an item from the collection by key:
+The `forget` method removes an item from the collection by its key:
 ```php
 $collection = new Collection(['firstName' => 'Igor', 'lastName' => 'Chepurnoy']);
 
@@ -365,11 +364,14 @@ $collection->all();
 
 // ['lastName' => 'Chepurnoy']
 ```
+> Unlike most other collection methods, `forget` does not return a new modified collection; it modifies the collection it is called on.
+
 ------
 
 #####```forPage()```
 
-"Paginate" the collection by slicing it into a smaller collection:
+The `forPage` method returns a new collection containing the items that would be present on a given page number:
+
 ```php
 $collection = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
@@ -379,6 +381,8 @@ $chunk->all();
 
 // [4, 5, 6]
 ```
+> The method requires the page number and the number of items to show per page, respectively.
+
 ---------
 
 #####```get()```
@@ -397,11 +401,17 @@ $collection->get('User.identity.id');
 
 // 1
 ```
+You may optionally pass a default value as the second argument:
+```php
+$collection->get('User.identity.email', false);
+
+// false
+```
 ---------
 
 #####```groupBy()```
 
-Group an associative array by a field or using a callback:
+The `groupBy` method groups the collection's items by a given key:
 ```php
 $collection = new Collection([
      ['id' => 'id_2', 'name' => 'Bob'],
@@ -412,6 +422,7 @@ $collection = new Collection([
 $grouped = $collection->groupBy('id');
 
 $grouped->toArray();
+
 /*
 [
     'id_2' => [
@@ -424,17 +435,41 @@ $grouped->toArray();
 ]
 */
 ```
+In addition to passing a string key, you may also pass a callback. The callback should return the value you wish to key the group by:
+```php
+$grouped = $collection->groupBy(function ($item, $key) {
+    return substr($item['id'], -2);
+});
+
+/*
+[
+    '_2' => [
+        ['id' => 'id_2', 'name' => 'Bob'],
+        ['id' => 'id_2', 'name' => 'John'],
+    ],
+    '_3' => [
+        ['id' => 'id_3', 'name' => 'Frank'],
+    ],
+]
+*/
+```
+
+
 ---------
 
 #####```has()```
 
-Determine if an item exists in the collection by key:
+The `has` method determines if a given key exists in the collection:
 ```php
 $collection = new Collection(['id' => 1, 'name' => 'Igor']);
 
 $collection->has('id');
 
 // true
+
+$collection->has('email');
+
+// false
 ```
 ---------
 
@@ -451,11 +486,19 @@ $collection->implode('name', ', ');
 
 // Ben, Bob
 ```
+
+If the collection contains simple strings or numeric values, simply pass the "glue" as the only argument to the method:
+```php
+Collection::make(['Ben', 'Bob'])->implode(' and ')
+
+// Ben and Bob
+```
+
 ---------
 
 #####```intersect()```
 
-Intersect the collection with the given items:
+The `intersect` method removes any values that are not present in the given array or collection:
 ```php
 $collection = new Collection(['php', 'python', 'ruby']);
 
@@ -469,7 +512,7 @@ $intersect->all();
 
 #####```isEmpty()```
 
-Determine if the collection is empty or not:
+The `isEmpty` method returns true if the collection is empty; otherwise, false is returned:
 ```php
 $collection = (new Collection([]))->isEmpty();
 
@@ -522,7 +565,7 @@ $keyed->all();
 
 #####```keys()```
 
-Get the keys of the collection items:
+The `keys` method returns all of the collection's keys:
 ```php
 $collection = new Collection([
     'city' => 'New York',
@@ -537,7 +580,7 @@ $collection->keys();
 
 #####```map()```
 
-Run a map over each of the items:
+The `map` method iterates through the collection and passes each value to the given callback. The callback is free to modify the item and return it, thus forming a new collection of modified items:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -549,6 +592,9 @@ $multiplied->all();
 
 // [2, 4, 6, 8, 10]
 ```
+
+> Like most other collection methods, `map` returns a new collection instance; it does not modify the collection it is called on. If you want to transform the original collection, use the [transform](#transform) method.
+
 ---------
 
 #####```max()```
@@ -586,12 +632,12 @@ $merged->all();
 Get the min value of a given key:
 ```php
 $collection = new Collection([['foo' => 10], ['foo' => 20]]);
-$max = $collection->min('foo');
+$min = $collection->min('foo');
 
 // 10
 
 $collection = new Collection([1, 2, 3, 4, 5]);
-$max = $collection->min();
+$min = $collection->min();
 
 // 1
 ```
@@ -599,7 +645,7 @@ $max = $collection->min();
 
 #####```only()```
 
-Get the items with the specified keys:
+The `only` method returns the items in the collection with the specified keys:
 ```php
 $collection = new Collection(['product_id' => 1, 'name' => 'Desk', 'price' => 100, 'discount' => false]);
 
@@ -614,7 +660,7 @@ $filtered->all();
 
 #####```pluck()```
 
-Get the values of a given key:
+The `pluck` method retrieves all of the collection values for a given key:
 ```php
 $collection = new Collection([
     ['product_id' => 'prod-100', 'name' => 'Desk'],
@@ -641,7 +687,7 @@ $plucked->all();
 
 #####```pop()```
 
-Get and remove the last item from the collection:
+The `pop` method removes and returns the last item from the collection:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -656,7 +702,7 @@ $collection->all();
 
 #####```prepend()```
 
-Push an item onto the beginning of the collection:
+The `prepend` method adds an item to the beginning of the collection:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -666,11 +712,24 @@ $collection->all();
 
 // [0, 1, 2, 3, 4, 5]
 ```
+
+You can optionally pass a second argument to set the key of the prepended item:
+
+```php
+$collection = Collection::make(['one' => 1, 'two' => 2]);
+
+$collection->prepend(0, 'zero');
+
+$collection->all();
+
+// ['zero' => 0, 'one' => 1, 'two', => 2]
+```
+
 ---------
 
 #####```pull()```
 
-Get and remove an item from the collection:
+The `pull` method removes and returns an item from the collection by its key:
 ```php
 $collection = new Collection(['product_id' => 'prod-100', 'name' => 'Desk']);
 
@@ -714,7 +773,7 @@ $collection->all();
 
 #####```random()```
 
-Desc:
+The `random` method returns a random item from the collection:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -735,7 +794,7 @@ $random->all();
 
 #####```reduce()```
 
-Reduce the collection to a single value:
+The `reduce` method reduces the collection to a single value, passing the result of each iteration into the subsequent iteration:
 ```php
 $collection = new Collection([1, 2, 3]);
 
@@ -758,7 +817,7 @@ $collection->reduce(function ($carry, $item) {
 
 #####```reject()```
 
-Create a collection of all elements that do not pass a given truth test:
+The `reject` method filters the collection using the given callback. The callback should return true for any items it wishes to remove from the resulting collection:
 ```php
 $collection = new Collection([1, 2, 3, 4]);
 
@@ -774,7 +833,7 @@ $filtered->all();
 
 #####```reverse()```
 
-Reverse items order:
+The `reverse` method reverses the order of the collection's items:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -806,7 +865,7 @@ $collection->search('4', true);
 
 #####```shift()```
 
-Get and remove the first item from the collection:
+The `shift` method removes and returns the first item from the collection:
 ```php
 $collection = new Collection([1, 2, 3, 4, 5]);
 
@@ -1156,7 +1215,7 @@ $values->all();
 
 #####```where()```
 
-Filter items by the given key value pair:
+The `where` method filters the collection by a given key / value pair:
 ```php
 $collection = new Collection([
     ['product' => 'Desk', 'price' => 200],
@@ -1189,7 +1248,7 @@ This method has the same signature as the [where()](#where) method; however, all
 
 #####```whereIn()```
 
-Filter the collection by a given key / value contained within the given array:
+The `whereIn` method filters the collection by a given key / value contained within the given array.
 ```php
 $collection = new Collection([
     ['product' => 'Desk', 'price' => 200],
@@ -1221,7 +1280,7 @@ This method has the same signature as the [whereIn()](#wherein) method; however,
 
 #####```zip()```
 
-Zip the collection together with one or more arrays:
+The `zip` method merges together the values of the given array with the values of the collection at the corresponding index:
 
 ```php
 $collection = new Collection(['Chair', 'Desk']);
