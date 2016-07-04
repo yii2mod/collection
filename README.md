@@ -353,7 +353,7 @@ $collection = new Collection(['firstName' => 'Igor', 'lastName' => 'Chepurnoy'])
 
 $collection->flip();
 
-// ['igor' => 'firstName', 'chepurnoy' => 'lastName']
+// ['Igor' => 'firstName', 'Chepurnoy' => 'lastName']
 ```
 ------
 
