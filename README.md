@@ -4,6 +4,7 @@ Yii2 Collection
 Basic collection library for Yii Framework 2.0
 
 [![Latest Stable Version](https://poser.pugx.org/yii2mod/collection/v/stable)](https://packagist.org/packages/yii2mod/collection) [![Total Downloads](https://poser.pugx.org/yii2mod/collection/downloads)](https://packagist.org/packages/yii2mod/collection) [![License](https://poser.pugx.org/yii2mod/collection/license)](https://packagist.org/packages/yii2mod/collection)
+[![Build Status](https://travis-ci.org/yii2mod/collection.svg?branch=master)](https://travis-ci.org/yii2mod/collection)
 
 Installation
 ------------
