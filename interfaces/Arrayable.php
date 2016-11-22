@@ -4,6 +4,7 @@ namespace yii2mod\collection\interfaces;
 
 /**
  * Interface Arrayable
+ *
  * @package yii2mod\collection\interfaces
  */
 interface Arrayable

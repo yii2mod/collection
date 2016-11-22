@@ -6,6 +6,7 @@ use yii2mod\collection\Collection;
 
 /**
  * Class CollectionTest
+ *
  * @package yii2mod\collection\tests
  */
 class CollectionTest extends TestCase
@@ -35,7 +36,7 @@ class CollectionTest extends TestCase
         $chunks = $collection->chunk(4);
         $this->assertEquals([
             [1, 2, 3, 4],
-            [4 => 5, 5 => 6, 6 => 7]
+            [4 => 5, 5 => 6, 6 => 7],
         ], $chunks->toArray());
     }
 
@@ -62,7 +63,7 @@ class CollectionTest extends TestCase
         // test pass key/value
         $collection = new Collection([
             ['city' => 'Alabama'],
-            ['city' => 'New York']
+            ['city' => 'New York'],
         ]);
 
         $this->assertTrue($collection->contains('city', 'New York'));
@@ -172,9 +173,9 @@ class CollectionTest extends TestCase
         $collection = new Collection([
             'User' => [
                 'identity' => [
-                    'id' => 1
-                ]
-            ]
+                    'id' => 1,
+                ],
+            ],
         ]);
         $this->assertEquals(1, $collection->get('User.identity.id'));
     }
@@ -274,7 +275,7 @@ class CollectionTest extends TestCase
     {
         $collection = new Collection([
             'city' => 'New York',
-            'country' => 'USA'
+            'country' => 'USA',
         ]);
         $this->assertEquals(['city', 'country'], $collection->keys()->all());
     }
@@ -501,7 +502,7 @@ class CollectionTest extends TestCase
     {
         $collection = new Collection([
             10 => ['product' => 'Desk', 'price' => 200],
-            11 => ['product' => 'Desk', 'price' => 200]
+            11 => ['product' => 'Desk', 'price' => 200],
         ]);
         $values = $collection->values();
         $this->assertEquals([

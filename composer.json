@@ -2,7 +2,11 @@
     "name": "yii2mod/collection",
     "description": "Basic collection library",
     "type": "yii2-extension",
-    "keywords": ["yii2", "extension"],
+    "keywords": [
+        "yii2",
+        "yii2 collection",
+        "collection"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -13,6 +17,9 @@
     "require": {
         "yiisoft/yii2": "*",
         "yii2mod/yii2-helpers": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "~1.7"
     },
     "autoload": {
         "psr-4": {
