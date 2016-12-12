@@ -19,7 +19,7 @@
         "yii2mod/yii2-helpers": "*"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "~1.7"
+        "friendsofphp/php-cs-fixer": "~2.0"
     },
     "autoload": {
         "psr-4": {
