@@ -102,7 +102,7 @@ Available Methods
 
 Method Listing
 -------------------
-#####```all()```
+##### ```all()```
 
 The `all` method simply returns the underlying array represented by the collection:
 ```php
@@ -112,7 +112,7 @@ $collection->all();
 ```
 ------
 
-#####```avg()```
+##### ```avg()```
 
 The `avg` method returns the average of all items in the collection:
 ```php
@@ -133,7 +133,7 @@ $collection->avg('price');
 ```
 ------
 
-#####```chunk()```
+##### ```chunk()```
 
 The `chunk` method breaks the collection into multiple, smaller collections of a given size:
 ```php
@@ -147,7 +147,7 @@ $chunks->toArray();
 ```
 ------
 
-#####```collapse()```
+##### ```collapse()```
 
 The `collapse` method collapses a collection of arrays into a flat collection:
 ```php
@@ -161,7 +161,7 @@ $collapsed->all();
 ```
 ------
 
-#####```combine()```
+##### ```combine()```
 
 Create a collection by using this collection for keys and another for its values:
 ```php
@@ -175,7 +175,7 @@ $combined->all();
 ```
 ------
 
-#####```contains()```
+##### ```contains()```
 
 The `contains` method determines whether the collection contains a given item:
 ```php
@@ -204,7 +204,7 @@ $collection->contains('city', 'New York');
 ```
 ------
 
-#####```count()```
+##### ```count()```
 
 The `count` method returns the total number of items in the collection:
 ```php
@@ -216,7 +216,7 @@ $collection->count();
 ```
 ------
 
-#####```diff()```
+##### ```diff()```
 
 The `diff` method compares the collection against another collection or a plain PHP array:
 ```php
@@ -230,7 +230,7 @@ $diff->all();
 ```
 ------
 
-#####```each()```
+##### ```each()```
 
 The `each` method iterates over the items in the collection and passes each item to a given callback:
 ```php
@@ -242,7 +242,7 @@ $collection = $collection->each(function ($item, $key) {
 ```
 ------
 
-#####```every()```
+##### ```every()```
 
 The `every` method creates a new collection consisting of every n-th element:
 ```php
@@ -260,7 +260,7 @@ $collection->every(4, 1);
 ```
 ------
 
-#####```except()```
+##### ```except()```
 
 Get all items except for those with the specified keys:
 ```php
@@ -276,7 +276,7 @@ For the inverse of `except`, see the [only](#only) method.
 
 ------
 
-#####```filter()```
+##### ```filter()```
 
 The `filter` method filters the collection by a given callback, keeping only those items that pass a given truth test:
 ```php
@@ -292,7 +292,7 @@ $filtered->all();
 ```
 ------
 
-#####```first()```
+##### ```first()```
 
 The `first` method returns the first element in the collection that passes a given truth test:
 ```php
@@ -312,7 +312,7 @@ $collection->first();
 ```
 ------
 
-#####```last()```
+##### ```last()```
 
 The `last` method returns the last element in the collection that passes a given truth test:
 ```php
@@ -334,7 +334,7 @@ $collection->last();
 ```
 ------
 
-#####```flatten()```
+##### ```flatten()```
 
 The `flatten` method flattens a multi-dimensional collection into a single dimension:
 ```php
@@ -346,7 +346,7 @@ $collection->flatten();
 ```
 ------
 
-#####```flip()```
+##### ```flip()```
 
 The `flip` method swaps the collection's keys with their corresponding values:
 ```php
@@ -358,7 +358,7 @@ $collection->flip();
 ```
 ------
 
-#####```forget()```
+##### ```forget()```
 
 The `forget` method removes an item from the collection by its key:
 ```php
@@ -374,7 +374,7 @@ $collection->all();
 
 ------
 
-#####```forPage()```
+##### ```forPage()```
 
 The `forPage` method returns a new collection containing the items that would be present on a given page number:
 
@@ -391,7 +391,7 @@ $chunk->all();
 
 ---------
 
-#####```get()```
+##### ```get()```
 
 Get an item from the collection by key:
 ```php
@@ -415,7 +415,7 @@ $collection->get('User.identity.email', false);
 ```
 ---------
 
-#####```groupBy()```
+##### ```groupBy()```
 
 The `groupBy` method groups the collection's items by a given key:
 ```php
@@ -463,7 +463,7 @@ $grouped = $collection->groupBy(function ($item, $key) {
 
 ---------
 
-#####```has()```
+##### ```has()```
 
 The `has` method determines if a given key exists in the collection:
 ```php
@@ -479,7 +479,7 @@ $collection->has('email');
 ```
 ---------
 
-#####```implode()```
+##### ``implode()```
 
 Concatenate values of a given key as a string:
 ```php
@@ -502,7 +502,7 @@ Collection::make(['Ben', 'Bob'])->implode(' and ')
 
 ---------
 
-#####```intersect()```
+##### ```intersect()```
 
 The `intersect` method removes any values that are not present in the given array or collection:
 ```php
@@ -516,7 +516,7 @@ $intersect->all();
 ```
 ---------
 
-#####```isEmpty()```
+##### ```isEmpty()```
 
 The `isEmpty` method returns true if the collection is empty; otherwise, false is returned:
 ```php
@@ -526,7 +526,7 @@ $collection = (new Collection([]))->isEmpty();
 ```
 ---------
 
-#####```keyBy()```
+##### ```keyBy()```
 
 Key an associative array by a field or using a callback:
 ```php
@@ -569,7 +569,7 @@ $keyed->all();
 
 ---------
 
-#####```keys()```
+##### ```keys()```
 
 The `keys` method returns all of the collection's keys:
 ```php
@@ -584,7 +584,7 @@ $collection->keys();
 ```
 ---------
 
-#####```map()```
+##### ```map()```
 
 The `map` method iterates through the collection and passes each value to the given callback. The callback is free to modify the item and return it, thus forming a new collection of modified items:
 ```php
@@ -603,7 +603,7 @@ $multiplied->all();
 
 ---------
 
-#####```max()```
+##### ```max()```
 
 Get the max value of a given key:
 ```php
@@ -619,7 +619,7 @@ $max = $collection->max();
 ```
 ---------
 
-#####```merge()```
+##### ```merge()```
 
 Merge the collection with the given items:
 ```php
@@ -633,7 +633,7 @@ $merged->all();
 ```
 ---------
 
-#####```min()```
+##### ```min()```
 
 Get the min value of a given key:
 ```php
@@ -649,7 +649,7 @@ $min = $collection->min();
 ```
 ---------
 
-#####```only()```
+##### ```only()```
 
 The `only` method returns the items in the collection with the specified keys:
 ```php
@@ -664,7 +664,7 @@ $filtered->all();
 ---------
 
 
-#####```pluck()```
+##### ```pluck()```
 
 The `pluck` method retrieves all of the collection values for a given key:
 ```php
@@ -691,7 +691,7 @@ $plucked->all();
 ```
 ---------
 
-#####```pop()```
+##### ```pop()```
 
 The `pop` method removes and returns the last item from the collection:
 ```php
@@ -706,7 +706,7 @@ $collection->all();
 ```
 ---------
 
-#####```prepend()```
+##### ```prepend()```
 
 The `prepend` method adds an item to the beginning of the collection:
 ```php
@@ -733,7 +733,7 @@ $collection->all();
 
 ---------
 
-#####```pull()```
+##### ```pull()```
 
 The `pull` method removes and returns an item from the collection by its key:
 ```php
@@ -749,7 +749,7 @@ $collection->all();
 ```
 ---------
 
-#####```push()```
+##### ```push()```
 
 Push an item onto the end of the collection:
 ```php
@@ -763,7 +763,7 @@ $collection->all();
 ```
 ---------
 
-#####```put()```
+##### ```put()```
 
 Put an item in the collection by key:
 ```php
@@ -777,7 +777,7 @@ $collection->all();
 ```
 ---------
 
-#####```random()```
+##### ```random()```
 
 The `random` method returns a random item from the collection:
 ```php
@@ -798,7 +798,7 @@ $random->all();
 ```
 ---------
 
-#####```reduce()```
+##### ```reduce()```
 
 The `reduce` method reduces the collection to a single value, passing the result of each iteration into the subsequent iteration:
 ```php
@@ -821,7 +821,7 @@ $collection->reduce(function ($carry, $item) {
 ```
 ---------
 
-#####```reject()```
+##### ```reject()```
 
 The `reject` method filters the collection using the given callback. The callback should return true for any items it wishes to remove from the resulting collection:
 ```php
@@ -837,7 +837,7 @@ $filtered->all();
 ```
 ---------
 
-#####```reverse()```
+##### ```reverse()```
 
 The `reverse` method reverses the order of the collection's items:
 ```php
@@ -851,7 +851,7 @@ $reversed->all();
 ```
 ---------
 
-#####```search()```
+##### ```search()```
 
 Search the collection for a given value and return the corresponding key if successful:
 ```php
@@ -869,7 +869,7 @@ $collection->search('4', true);
 ```
 ---------
 
-#####```shift()```
+##### ```shift()```
 
 The `shift` method removes and returns the first item from the collection:
 ```php
@@ -885,7 +885,7 @@ $collection->all();
 ```
 ---------
 
-#####```shuffle()```
+##### ```shuffle()```
 
 Shuffle the items in the collection:
 ```php
@@ -899,7 +899,7 @@ $shuffled->all();
 ```
 ---------
 
-#####```slice()```
+##### ```slice()```
 
 Slice the underlying collection array:
 ```php
@@ -922,7 +922,7 @@ $slice->all();
 ```
 ---------
 
-#####```sort()```
+##### ```sort()```
 
 Sort through each item with a callback:
 ```php
@@ -936,7 +936,7 @@ $sorted->values()->all();
 ```
 ---------
 
-#####```sortBy()```
+##### ```sortBy()```
 
 Sort the collection using the given callback:
 ```php
@@ -982,12 +982,12 @@ $sorted->values()->all();
 ```
 ---------
 
-#####```sortByDesc()```
+##### ```sortByDesc()```
 This method has the same signature as the [sortBy()](#sortby) method, but will sort the collection in the opposite order.
 
 ---------
 
-#####```splice()```
+##### ```splice()```
 
 Splice a portion of the underlying collection array:
 ```php
@@ -1033,7 +1033,7 @@ $collection->all();
 ```
 ---------
 
-#####```sum()```
+##### ```sum()```
 
 Get the sum of the given values:
 ```php
@@ -1070,7 +1070,7 @@ $collection->sum(function ($product) {
 ```
 ---------
 
-#####```take()```
+##### ```take()```
 
 Take the first or last {$limit} items:
 ```php
@@ -1094,7 +1094,7 @@ $chunk->all();
 ```
 ---------
 
-#####```toArray()```
+##### ``toArray()```
 
 Get the collection of items as a plain array:
 ```php
@@ -1110,7 +1110,7 @@ $collection->toArray();
 
 ---------
 
-#####```toJson()```
+##### ```toJson()```
 
 Get the collection of items as JSON:
 ```php
@@ -1122,7 +1122,7 @@ $collection->toJson();
 ```
 ---------
 
-#####```transform()```
+##### ```transform()```
 
 Transform each item in the collection using a callback:
 ```php
@@ -1140,7 +1140,7 @@ $collection->all();
 
 ---------
 
-#####```unique()```
+##### ```unique()```
 
 Return only unique items from the collection array:
 ```php
@@ -1197,7 +1197,7 @@ $unique->values()->all();
 ```
 ---------
 
-#####```values()```
+##### ```values()```
 
 Reset the keys on the underlying array:
 ```php
@@ -1219,7 +1219,7 @@ $values->all();
 ```
 ---------
 
-#####```where()```
+##### ```where()```
 
 The `where` method filters the collection by a given key / value pair:
 ```php
@@ -1246,13 +1246,13 @@ The [where()](#where) method uses strict comparisons when checking item values. 
 
 ---------
 
-#####```whereLoose()```
+##### ```whereLoose()```
 
 This method has the same signature as the [where()](#where) method; however, all values are compared using "loose" comparisons.
 
 ---------
 
-#####```whereIn()```
+##### ```whereIn()```
 
 The `whereIn` method filters the collection by a given key / value contained within the given array.
 ```php
@@ -1278,13 +1278,13 @@ The [whereIn()](#wherein) method uses strict comparisons when checking item valu
 
 ---------
 
-#####```whereInLoose()```
+##### ```whereInLoose()```
 
 This method has the same signature as the [whereIn()](#wherein) method; however, all values are compared using "loose" comparisons.
 
 ---------
 
-#####```zip()```
+##### ```zip()```
 
 The `zip` method merges together the values of the given array with the values of the collection at the corresponding index:
 
