@@ -479,7 +479,7 @@ $collection->has('email');
 ```
 ---------
 
-##### ``implode()```
+##### ```implode()```
 
 Concatenate values of a given key as a string:
 ```php
@@ -1094,7 +1094,7 @@ $chunk->all();
 ```
 ---------
 
-##### ``toArray()```
+##### ```toArray()```
 
 Get the collection of items as a plain array:
 ```php
