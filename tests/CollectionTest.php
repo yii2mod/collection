@@ -589,4 +589,12 @@ class CollectionTest extends TestCase
         $this->assertSame([1], $fromTap);
         $this->assertSame([1, 2, 3], $collection->toArray());
     }
+
+    public function testEmptyCollectionIsNotEmpty()
+    {
+        $c = new Collection(['foo', 'bar']);
+
+        $this->assertFalse($c->isEmpty());
+        $this->assertTrue($c->isNotEmpty());
+    }
 }

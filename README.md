@@ -37,69 +37,70 @@ $collection = Collection::make([1, 2, 3]);
 
 Available Methods
 -------------------
-1. **[all()](#all)**
-2. **[avg()](#avg)**
-3. **[chunk()](#chunk)**
-4. **[collapse()](#collapse)**
-5. **[combine()](#combine)**
-6. **[contains()](#contains)**
-7. **[count()](#count)**
-8. **[diff()](#diff)**
-9. **[each()](#each)**
-10. **[every()](#every)**
-11. **[except()](#except)**
-12. **[filter()](#filter)**
-13. **[first()](#first)**
-14. **[last()](#last)**
-15. **[flatten()](#flatten)**
-16. **[flip()](#flip)**
-17. **[forget()](#forget)**
-18. **[forPage()](#forpage)**
-19. **[get()](#get)**
-20. **[groupBy()](#groupby)**
-21. **[has()](#has)**
-22. **[implode()](#implode)**
-23. **[intersect()](#intersect)**
-24. **[isEmpty()](#isempty)**
-25. **[keyby()](#keyby)**
-26. **[keys()](#keys)**
-27. **[map()](#map)**
-28. **[max()](#max)**
-29. **[merge()](#merge)**
-30. **[min()](#min)**
-31. **[only()](#only)**
-32. **[pluck()](#pluck)**
-33. **[pop()](#pop)**
-34. **[prepend()](#prepend)**
-35. **[pull()](#pull)**
-36. **[push()](#push)**
-37. **[put()](#put)**
-38. **[random()](#random)**
-39. **[reduce()](#reduce)**
-40. **[reject()](#reject)**
-41. **[reverse()](#reverse)**
-42. **[search()](#search)**
-43. **[shift()](#shift)**
-44. **[shuffle()](#shuffle)**
-45. **[slice()](#slice)**
-46. **[sort()](#sort)**
-47. **[sortBy()](#sortby)** 
-48. **[sortByDesc()](#sortbydesc)** 
-49. **[splice()](#splice)**
-50. **[sum()](#sum)**
-51. **[take()](#take)**
-52. **[toArray()](#toarray)**
-53. **[tap()](#tap)**
-54. **[toJson()](#tojson)**
-55. **[transform()](#transform)**
-56. **[unique()](#unique)**
-57. **[uniqueStrict()](#uniqueStrict)**
-58. **[values()](#values)**
-59. **[where()](#where)**
-60. **[whereLoose()](#whereloose)**
-61. **[whereIn()](#wherein)**
-62. **[whereInLoose()](#whereinloose)**
-63. **[zip()](#zip)**
+* **[all()](#all)**
+* **[avg()](#avg)**
+* **[chunk()](#chunk)**
+* **[collapse()](#collapse)**
+* **[combine()](#combine)**
+* **[contains()](#contains)**
+* **[count()](#count)**
+* **[diff()](#diff)**
+* **[each()](#each)**
+* **[every()](#every)**
+* **[except()](#except)**
+* **[filter()](#filter)**
+* **[first()](#first)**
+* **[last()](#last)**
+* **[flatten()](#flatten)**
+* **[flip()](#flip)**
+* **[forget()](#forget)**
+* **[forPage()](#forpage)**
+* **[get()](#get)**
+* **[groupBy()](#groupby)**
+* **[has()](#has)**
+* **[implode()](#implode)**
+* **[intersect()](#intersect)**
+* **[isEmpty()](#isempty)**
+* **[isNotEmpty()](#isnotempty)**
+* **[keyby()](#keyby)**
+* **[keys()](#keys)**
+* **[map()](#map)**
+* **[max()](#max)**
+* **[merge()](#merge)**
+* **[min()](#min)**
+* **[only()](#only)**
+* **[pluck()](#pluck)**
+* **[pop()](#pop)**
+* **[prepend()](#prepend)**
+* **[pull()](#pull)**
+* **[push()](#push)**
+* **[put()](#put)**
+* **[random()](#random)**
+* **[reduce()](#reduce)**
+* **[reject()](#reject)**
+* **[reverse()](#reverse)**
+* **[search()](#search)**
+* **[shift()](#shift)**
+* **[shuffle()](#shuffle)**
+* **[slice()](#slice)**
+* **[sort()](#sort)**
+* **[sortBy()](#sortby)** 
+* **[sortByDesc()](#sortbydesc)** 
+* **[splice()](#splice)**
+* **[sum()](#sum)**
+* **[take()](#take)**
+* **[toArray()](#toarray)**
+* **[tap()](#tap)**
+* **[toJson()](#tojson)**
+* **[transform()](#transform)**
+* **[unique()](#unique)**
+* **[uniqueStrict()](#uniqueStrict)**
+* **[values()](#values)**
+* **[where()](#where)**
+* **[whereLoose()](#whereloose)**
+* **[whereIn()](#wherein)**
+* **[whereInLoose()](#whereinloose)**
+* **[zip()](#zip)**
 
 
 Method Listing
@@ -525,6 +526,17 @@ The `isEmpty` method returns true if the collection is empty; otherwise, false i
 $collection = (new Collection([]))->isEmpty();
 
 // true
+```
+---------
+
+##### ```isNotEmpty()```
+
+The `isNotEmpty` method returns true if the collection is not empty; otherwise, false is returned:
+
+```php
+$collection = (new Collection([]))->isNotEmpty();
+
+// false
 ```
 ---------
 
