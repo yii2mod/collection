@@ -94,14 +94,13 @@ Available Methods
 * **[toJson()](#tojson)**
 * **[transform()](#transform)**
 * **[unique()](#unique)**
-* **[uniqueStrict()](#uniqueStrict)**
+* **[uniqueStrict()](#uniquestrict)**
 * **[values()](#values)**
 * **[where()](#where)**
 * **[whereLoose()](#whereloose)**
 * **[whereIn()](#wherein)**
 * **[whereInLoose()](#whereinloose)**
 * **[zip()](#zip)**
-
 
 Method Listing
 -------------------
