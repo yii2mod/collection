@@ -93,12 +93,13 @@ Available Methods
 54. **[toJson()](#tojson)**
 55. **[transform()](#transform)**
 56. **[unique()](#unique)**
-57. **[values()](#values)**
-58. **[where()](#where)**
-59. **[whereLoose()](#whereloose)**
-60. **[whereIn()](#wherein)**
-61. **[whereInLoose()](#whereinloose)**
-62. **[zip()](#zip)**
+57. **[uniqueStrict()](#uniqueStrict)**
+58. **[values()](#values)**
+59. **[where()](#where)**
+60. **[whereLoose()](#whereloose)**
+61. **[whereIn()](#wherein)**
+62. **[whereInLoose()](#whereinloose)**
+63. **[zip()](#zip)**
 
 
 Method Listing
@@ -1212,6 +1213,12 @@ $unique->values()->all();
     ]
 */
 ```
+---------
+
+##### ```uniqueStrict()```
+
+This method has the same signature as the `unique` method; however, all values are compared using "strict" comparisons.
+
 ---------
 
 ##### ```values()```
