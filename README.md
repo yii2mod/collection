@@ -89,15 +89,16 @@ Available Methods
 50. **[sum()](#sum)**
 51. **[take()](#take)**
 52. **[toArray()](#toarray)**
-53. **[toJson()](#tojson)**
-54. **[transform()](#transform)**
-55. **[unique()](#unique)**
-56. **[values()](#values)**
-57. **[where()](#where)**
-58. **[whereLoose()](#whereloose)**
-59. **[whereIn()](#wherein)**
-60. **[whereInLoose()](#whereinloose)**
-61. **[zip()](#zip)**
+53. **[tap()](#tap)**
+54. **[toJson()](#tojson)**
+55. **[transform()](#transform)**
+56. **[unique()](#unique)**
+57. **[values()](#values)**
+58. **[where()](#where)**
+59. **[whereLoose()](#whereloose)**
+60. **[whereIn()](#wherein)**
+61. **[whereInLoose()](#whereinloose)**
+62. **[zip()](#zip)**
 
 
 Method Listing
@@ -1110,6 +1111,22 @@ $collection->toArray();
 
 ---------
 
+##### ```tap()```
+
+The `tap` method passes the collection to the given callback, allowing you to "tap" into the collection at a specific point and do something with the items while not affecting the collection itself:
+
+```php
+$collection = new Collection([2, 4, 3, 1, 5]);
+$result = $collection->sort()
+    ->tap(function ($collection) {
+        // Values after sorting
+        var_dump($collection->values()->toArray());
+    })
+    ->shift();
+// 1
+```
+---------
+
 ##### ```toJson()```
 
 Get the collection of items as JSON:
@@ -1296,21 +1313,5 @@ $zipped = $collection->zip([100, 200]);
 $zipped->all();
 
 // [['Chair', 100], ['Desk', 200]]
-```
----------
-
-##### ```tap()```
-
-The `tap` method passes the collection to the given callback, allowing you to "tap" into the collection at a specific point and do something with the items while not affecting the collection itself:
-
-```php
-$collection = new Collection([2, 4, 3, 1, 5]);
-$result = $collection->sort()
-    ->tap(function ($collection) {
-        // Values after sorting
-        var_dump($collection->values()->toArray());
-    })
-    ->shift();
-// 1
 ```
 ---------
