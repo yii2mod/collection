@@ -1298,3 +1298,19 @@ $zipped->all();
 // [['Chair', 100], ['Desk', 200]]
 ```
 ---------
+
+##### ```tap()```
+
+The `tap` method passes the collection to the given callback, allowing you to "tap" into the collection at a specific point and do something with the items while not affecting the collection itself:
+
+```php
+$collection = new Collection([2, 4, 3, 1, 5]);
+$result = $collection->sort()
+    ->tap(function ($collection) {
+        // Values after sorting
+        var_dump($collection->values()->toArray());
+    })
+    ->shift();
+// 1
+```
+---------

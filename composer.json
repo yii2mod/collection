@@ -15,6 +15,7 @@
         }
     ],
     "require": {
+        "php": ">=7.1",
         "yiisoft/yii2": "*",
         "yii2mod/yii2-helpers": "*"
     },

@@ -498,6 +498,35 @@ class CollectionTest extends TestCase
         $this->assertEquals([1, 2, 3, 4], $unique->values()->all());
     }
 
+    public function testUniqueStrict()
+    {
+        $c = new Collection([
+            [
+                'id' => '0',
+                'name' => 'zero',
+            ],
+            [
+                'id' => '00',
+                'name' => 'double zero',
+            ],
+            [
+                'id' => '0',
+                'name' => 'again zero',
+            ],
+        ]);
+
+        $this->assertEquals([
+            [
+                'id' => '0',
+                'name' => 'zero',
+            ],
+            [
+                'id' => '00',
+                'name' => 'double zero',
+            ],
+        ], $c->uniqueStrict('id')->all());
+    }
+
     public function testValues()
     {
         $collection = new Collection([
@@ -548,5 +577,16 @@ class CollectionTest extends TestCase
         $collection = new Collection(['Chair', 'Desk']);
         $zipped = $collection->zip([100, 200]);
         $this->assertEquals([['Chair', 100], ['Desk', 200]], $zipped->toArray());
+    }
+
+    public function testTap()
+    {
+        $collection = new Collection([1, 2, 3]);
+        $fromTap = [];
+        $collection = $collection->tap(function ($collection) use (&$fromTap) {
+            $fromTap = $collection->slice(0, 1)->toArray();
+        });
+        $this->assertSame([1], $fromTap);
+        $this->assertSame([1, 2, 3], $collection->toArray());
     }
 }
