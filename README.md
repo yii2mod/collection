@@ -93,7 +93,7 @@ Available Methods
 54. **[toJson()](#tojson)**
 55. **[transform()](#transform)**
 56. **[unique()](#unique)**
-57. **[uniqueStrict()](#uniqueStrict)**
+57. **[uniqueStrict()](#uniquestrict)**
 58. **[values()](#values)**
 59. **[where()](#where)**
 60. **[whereLoose()](#whereloose)**
