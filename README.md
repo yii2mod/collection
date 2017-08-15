@@ -1,7 +1,12 @@
-Yii2 Collection
-===============================================
+<p align="center">
+    <a href="https://github.com/yiisoft" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
+    </a>
+    <h1 align="center">Collection Extension for Yii 2</h1>
+    <br>
+</p>
 
-Basic collection library for Yii Framework 2.0
+The `yii2mod\collection\Collection` class provides a fluent, convenient wrapper for working with arrays of data.
 
 [![Latest Stable Version](https://poser.pugx.org/yii2mod/collection/v/stable)](https://packagist.org/packages/yii2mod/collection) [![Total Downloads](https://poser.pugx.org/yii2mod/collection/downloads)](https://packagist.org/packages/yii2mod/collection) [![License](https://poser.pugx.org/yii2mod/collection/license)](https://packagist.org/packages/yii2mod/collection)
 [![Build Status](https://travis-ci.org/yii2mod/collection.svg?branch=master)](https://travis-ci.org/yii2mod/collection)
