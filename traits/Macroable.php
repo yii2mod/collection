@@ -6,11 +6,11 @@ use BadMethodCallException;
 use Closure;
 
 /**
- * Class Macroable
+ * Trait Macroable
  *
  * @package yii2mod\collection\traits
  */
-class Macroable
+trait Macroable
 {
     /**
      * The registered string macros.
