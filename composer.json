@@ -15,12 +15,13 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.0.0",
         "yiisoft/yii2": "*",
         "yii2mod/yii2-helpers": "*"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "~2.0"
+        "friendsofphp/php-cs-fixer": "~2.0",
+        "phpunit/phpunit": "~6.0"
     },
     "autoload": {
         "psr-4": {
