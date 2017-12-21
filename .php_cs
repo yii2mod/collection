@@ -11,7 +11,7 @@ $config = PhpCsFixer\Config::create()
         'phpdoc_align' => false,
         'phpdoc_summary' => false,
         'phpdoc_inline_tag' => false,
-        'pre_increment' => false,
+        'increment_style' => ['style' => 'post'],
         'heredoc_to_nowdoc' => false,
         'cast_spaces' => false,
         'include' => false,
@@ -19,6 +19,7 @@ $config = PhpCsFixer\Config::create()
         'concat_space' => ['spacing' => 'one'],
         'ordered_imports' => true,
         'array_syntax' => ['syntax' => 'short'],
+        'yoda_style' => false,
     ])
     ->setFinder($finder);
 
