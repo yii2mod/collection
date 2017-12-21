@@ -681,9 +681,9 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
      *
      * @param int $amount
      *
-     * @return mixed
-     *
      * @throws \InvalidArgumentException
+     *
+     * @return mixed
      */
     public function random($amount = 1)
     {
