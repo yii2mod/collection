@@ -11,7 +11,7 @@ $config = PhpCsFixer\Config::create()
         'phpdoc_align' => false,
         'phpdoc_summary' => false,
         'phpdoc_inline_tag' => false,
-        'increment_style' => 'post',
+        'increment_style' => ['style' => 'post'],
         'heredoc_to_nowdoc' => false,
         'cast_spaces' => false,
         'include' => false,
