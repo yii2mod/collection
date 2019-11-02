@@ -11,6 +11,13 @@ The `yii2mod\collection\Collection` class provides a fluent, convenient wrapper 
 [![Latest Stable Version](https://poser.pugx.org/yii2mod/collection/v/stable)](https://packagist.org/packages/yii2mod/collection) [![Total Downloads](https://poser.pugx.org/yii2mod/collection/downloads)](https://packagist.org/packages/yii2mod/collection) [![License](https://poser.pugx.org/yii2mod/collection/license)](https://packagist.org/packages/yii2mod/collection)
 [![Build Status](https://travis-ci.org/yii2mod/collection.svg?branch=master)](https://travis-ci.org/yii2mod/collection)
 
+
+## Support us
+
+Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/yii2mod). 
+All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
+
+
 Installation
 ------------
 
